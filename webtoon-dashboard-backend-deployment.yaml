@@ -20,7 +20,7 @@ spec:
         agentpool: userpool
       containers:
         - name: webtoon-dashboard-backend-container
-          image: kt16big.azurecr.io/webtoon-dashboard-backend:${IMAGE_TAG}
+          image: kt16big.azurecr.io/webtoon-dashboard-backend-lee:${IMAGE_TAG}
           ports:
             - containerPort: 8000
           workingDir: /app
@@ -52,28 +52,9 @@ spec:
     - protocol: TCP
       port: 8002
       targetPort: 8000
----
+
 # ===================================================
-# Ingress for Backend API
+# 🚨 Ingress 제거됨 - 게이트웨이를 통해 라우팅
 # ===================================================
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: webtoon-dashboard-backend-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-headers: "Content-Type, Authorization"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /api
-            pathType: Prefix
-            backend:
-              service:
-                name: webtoon-dashboard-backend-service
-                port:
-                  number: 8002
+# Ingress가 제거되었습니다. 이제 게이트웨이를 통해 접근합니다.
+# 접근 경로: 게이트웨이:9000/api/** → 백엔드:8002
