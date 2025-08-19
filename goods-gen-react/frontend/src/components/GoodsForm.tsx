@@ -176,7 +176,6 @@ export default function GoodsForm() {
 
   return (
     <div style={containerStyle}>
-      <NavBar />
       <div style={mainContentStyle}>
         <div style={formColumnStyle}>
           <h2 style={{ marginBottom: "30px" }}>웹툰 캐릭터 굿즈 초안 생성</h2>

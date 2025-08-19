@@ -181,7 +181,6 @@ export default function GenerateForm() {
 
   return (
     <div style={containerStyle}>
-      <NavBar />
       <div style={mainContentStyle}>
         <div style={formColumnStyle}>
           <h2 style={{ marginBottom: '30px' }}>웹툰 캐릭터 PPL 생성</h2>

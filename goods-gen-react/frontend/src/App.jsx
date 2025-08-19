@@ -3,6 +3,7 @@
 import React from 'react';
 import './App.css';
 import GoodsForm from './components/GoodsForm.tsx'; // GoodsForm을 불러옵니다.
+import AuthGuard from './components/AuthGuard.js';
 
 function App() {
   return (
